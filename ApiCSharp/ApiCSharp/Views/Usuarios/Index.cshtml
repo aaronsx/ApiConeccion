@@ -1,0 +1,95 @@
+﻿@model IEnumerable<DAL.Usuarios>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dni_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellidos_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tlf_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clave_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accesos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estaBloqueado_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fch_fin_bloqueo_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fch_alta_usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fch_baja_usuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dni_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellidos_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tlf_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clave_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accesos.id_acceso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estaBloqueado_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fch_fin_bloqueo_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fch_alta_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fch_baja_usuario)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_usuario">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_usuario">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_usuario">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

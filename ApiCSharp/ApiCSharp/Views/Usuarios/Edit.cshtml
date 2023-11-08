@@ -1,0 +1,84 @@
+﻿@model DAL.Usuarios
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Usuarios</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id_usuario" />
+            <div class="form-group">
+                <label asp-for="dni_usuario" class="control-label"></label>
+                <input asp-for="dni_usuario" class="form-control" />
+                <span asp-validation-for="dni_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombre_usuario" class="control-label"></label>
+                <input asp-for="nombre_usuario" class="form-control" />
+                <span asp-validation-for="nombre_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="apellidos_usuario" class="control-label"></label>
+                <input asp-for="apellidos_usuario" class="form-control" />
+                <span asp-validation-for="apellidos_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tlf_usuario" class="control-label"></label>
+                <input asp-for="tlf_usuario" class="form-control" />
+                <span asp-validation-for="tlf_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email_usuario" class="control-label"></label>
+                <input asp-for="email_usuario" class="form-control" />
+                <span asp-validation-for="email_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="clave_usuario" class="control-label"></label>
+                <input asp-for="clave_usuario" class="form-control" />
+                <span asp-validation-for="clave_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="id_acceso" class="control-label"></label>
+                <select asp-for="id_acceso" class="form-control" asp-items="ViewBag.id_acceso"></select>
+                <span asp-validation-for="id_acceso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="estaBloqueado_usuario" class="control-label"></label>
+                <input asp-for="estaBloqueado_usuario" class="form-control" />
+                <span asp-validation-for="estaBloqueado_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fch_fin_bloqueo_usuario" class="control-label"></label>
+                <input asp-for="fch_fin_bloqueo_usuario" class="form-control" />
+                <span asp-validation-for="fch_fin_bloqueo_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fch_alta_usuario" class="control-label"></label>
+                <input asp-for="fch_alta_usuario" class="form-control" />
+                <span asp-validation-for="fch_alta_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fch_baja_usuario" class="control-label"></label>
+                <input asp-for="fch_baja_usuario" class="form-control" />
+                <span asp-validation-for="fch_baja_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
